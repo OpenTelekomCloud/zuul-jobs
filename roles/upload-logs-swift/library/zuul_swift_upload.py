@@ -762,10 +762,17 @@ class Uploader():
             relative_path = relative_path.rstrip('/')
             if relative_path == '':
                 relative_path = '/'
-        self.cloud.create_object(self.container,
+        obj = self.cloud.create_object(self.container,
                                  name=relative_path,
                                  data=data,
                                  **headers)
+        obj.set_metadata(
+            self.cloud,
+            metadata={
+                'delete-after': str(self.delete_after),
+                'content_type': file_detail.mimetype
+            }
+        )
 
 
 def run(cloud, container, files,
