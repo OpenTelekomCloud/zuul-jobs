@@ -23,6 +23,7 @@
     src: "{{ item.path }}"
     verify_host: true
   with_items: "{{ subunit_files.files }}"
+  failed_when: false
 
 - name: Return artifact to Zuul
   zuul_return:
