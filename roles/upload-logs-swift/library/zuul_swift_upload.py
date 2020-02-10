@@ -641,7 +641,8 @@ class Uploader():
                 lambda: self.cloud.create_container(
                     name=self.container, public=public))
             headers = {'X-Container-Meta-Web-Index': 'index.html',
-                       'X-Container-Meta-Access-Control-Allow-Origin': '*'}
+                       'X-Container-Meta-Access-Control-Allow-Origin': '*',
+                       'X-Container-Meta-Web-Listings': 'True'}
             retry_function(
                 lambda: self.cloud.update_container(
                     name=self.container,
