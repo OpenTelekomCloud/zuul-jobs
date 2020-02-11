@@ -11,5 +11,7 @@
     pre-run: playbooks/otc/pre.yaml
     vars:
       tox_envlist: functional
+      OS_CLOUD: functest_cloud
+      OS_ADMIN_CLOUD: functest_cloud
     secrets:
       - cloud_config
