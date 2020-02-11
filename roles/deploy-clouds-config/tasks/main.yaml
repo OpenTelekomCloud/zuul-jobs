@@ -1,0 +1,5 @@
+- name: Deploy clouds.yaml
+  template:
+    src: clouds.yaml.j2
+    dest: "{{ (zuul.executor.work_root + '/clouds.yaml') }}"
+    mode: 0440

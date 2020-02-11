@@ -1,0 +1,4 @@
+- hosts: all
+  roles:
+    - deploy-clouds-config
+
