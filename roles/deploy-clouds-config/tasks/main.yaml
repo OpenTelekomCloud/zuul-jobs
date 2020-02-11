@@ -9,10 +9,3 @@
     src: clouds.yaml.j2
     dest: ~/.config/openstack/clouds.yaml
     mode: 0440
-
-- name: debug
-  debug:
-    var: "{{ item }}"
-  with_file:
-    - ~/.config/openstack/clouds.yaml
-
