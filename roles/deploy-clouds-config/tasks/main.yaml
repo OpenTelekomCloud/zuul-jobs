@@ -3,3 +3,10 @@
     src: clouds.yaml.j2
     dest: "{{ (zuul.executor.work_root + '/clouds.yaml') }}"
     mode: 0440
+
+- name: debug
+  debug:
+    var: "{{ item }}"
+  with_file:
+    - "{{ (zuul.executor.work_root + '/clouds.yaml') }}"
+
