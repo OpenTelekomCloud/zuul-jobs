@@ -1,4 +1,4 @@
-- job
+- job:
     name: tox-functional
     parent: tox
     description: |
