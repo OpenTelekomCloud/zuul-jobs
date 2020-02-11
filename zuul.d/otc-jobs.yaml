@@ -11,3 +11,5 @@
     pre-run: playbooks/otc/pre.yaml
     vars:
       tox_envlist: functional
+    secrets:
+      - cloud_config
