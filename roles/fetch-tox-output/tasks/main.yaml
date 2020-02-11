@@ -59,3 +59,21 @@
   # no ./tox/env directory
   failed_when: false
   when: not zuul_use_fetch_output
+
+- name: Debug logs src
+  command: "ls -alZ {{ zuul_work_dir }}/.tox/{{item}}/log"
+  with_items: "{{ envlist }}"
+  register: ls_src
+
+- name: Debug logs dest
+  command: "ls -alZ {{ log_path }}"
+  delegate_to: localhost
+  register: ls_dest
+
+- name: print results of src
+  debug:
+    var: ls_src
+
+- name: print results of dest
+  debug:
+    var: ls_dest
