@@ -24,7 +24,6 @@
     mode: pull
     src: "{{ zuul_output_dir }}/logs/"
     verify_host: true
-  failed_when: false
 
 - name: Collect artifacts
   synchronize:
@@ -32,7 +31,6 @@
     mode: pull
     src: "{{ zuul_output_dir }}/artifacts/"
     verify_host: true
-  failed_when: false
 
 - name: Collect docs
   synchronize:
@@ -40,4 +38,3 @@
     mode: pull
     src: "{{ zuul_output_dir }}/docs/"
     verify_host: true
-  failed_when: false
